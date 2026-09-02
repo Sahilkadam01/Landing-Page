@@ -2,213 +2,149 @@
   box-sizing: border-box;
 }
 
-html {
-  margin: 0;
-  padding: 0;
-  scroll-behavior: auto;
-}
-
+html,
 body {
   margin: 0;
   padding: 0;
+}
+
+body {
   overflow-x: hidden;
-  background: #111;
   font-family: Arial, Helvetica, sans-serif;
+  background: #111;
+}
+
+/* ========================================= COMMON SECTION ========================================= */
+.section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* ========================================= CONTAINER ========================================= */
+.container {
+  width: min(calc(100% - 80px), 1400px);
+  margin: 0 auto;
 }
 
 /* ========================================= HERO ========================================= */
 .hero {
   position: relative;
-  height: 100vh;
-  display: flex;
-  align-items: center;
+  z-index: 1;
   background: #111;
   color: #fff;
-  z-index: 1;
-}
-
-.hero-content {
-  width: min(calc(100% - 80px), 1400px);
-  margin: auto;
 }
 
 .hero h1 {
+  max-width: 1000px;
+  margin: 20px 0 30px;
+  font-size: clamp(60px, 9vw, 140px);
+  line-height: .88;
+  letter-spacing: -.06em;
+}
+
+.hero p {
+  max-width: 500px;
   margin: 0;
-  font-size: clamp(50px, 8vw, 120px);
-  line-height: .9;
-  letter-spacing: -.05em;
+  font-size: 20px;
+  line-height: 1.6;
+  opacity: .7;
 }
 
-/* ========================================= SECTION ========================================= */
-.page-section {
+/* ========================================= EYEBROW ========================================= */
+.eyebrow {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+/* ========================================= CONTENT SECTIONS ========================================= */
+.content-section {
+  /* * Important: * * Each section has a full viewport height. */
+  min-height: 100vh;
   position: relative;
-  width: 100%;
-  height: 100vh;
-  scroll-snap-align: start;
-  z-index: 1;
 }
 
-/* ========================================= PANEL ========================================= */
-.section-panel {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  transform: translate3d(0, 0, 0);
-  will-change: transform;
-  transition: transform 1100ms cubic-bezier(.22, 1, .36, 1);
-}
-
-/* ========================================= FIRST SECTION ========================================= */
-.section-one {
+/* ========================================= SECTION 02 ========================================= */
+.section-02 {
+  z-index: 2;
   background: #fff;
   color: #111;
 }
 
-.section-one .section-panel {
-  transform: none;
-}
-
-/* ========================================= SECTION 02 ========================================= */
-.section-two {
-  background: #191919;
-  color: #fff;
-  z-index: 2;
-}
-
 /* ========================================= SECTION 03 ========================================= */
-.section-three {
+.section-03 {
+  z-index: 3;
   background: #ff9800;
   color: #111;
-  z-index: 3;
 }
 
-/* ========================================= SECTION 04 ========================================= */
-.section-four {
-  background: #f4f4f4;
-  color: #111;
-  z-index: 4;
+/* ========================================= SECTION HEADINGS ========================================= */
+.content-section h2 {
+  max-width: 900px;
+  margin: 25px 0 30px;
+  font-size: clamp(55px, 8vw, 120px);
+  line-height: .9;
+  letter-spacing: -.06em;
 }
 
-/* ========================================= ENTER FROM BOTTOM ========================================= */
-.page-section.enter-bottom .section-panel {
-  transform: translate3d(0, 100%, 0);
-}
-
-/* ========================================= NORMAL / ARRIVED ========================================= */
-.page-section.enter-bottom .section-panel.is-active {
-  transform: translate3d(0, 0, 0);
-}
-
-/* ========================================= EXIT TOWARD BOTTOM ========================================= */
-.page-section.exit-bottom .section-panel {
-  transform: translate3d(0, 100%, 0);
-}
-
-/* ========================================= ENTER FROM TOP ========================================= */
-.page-section.enter-top .section-panel {
-  transform: translate3d(0, -100%, 0);
-}
-
-/* ========================================= ARRIVE FROM TOP ========================================= */
-.page-section.enter-top .section-panel.is-active {
-  transform: translate3d(0, 0, 0);
-}
-
-/* ========================================= CONTENT ========================================= */
-.section-inner {
-  width: min(calc(100% - 80px), 1400px);
-  height: 100%;
-  margin: auto;
-  display: flex;
-  align-items: center;
-}
-
-/* ========================================= GRID ========================================= */
-.section-grid {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-/* ========================================= TEXT ========================================= */
-.section-content {
-  max-width: 650px;
-}
-
-.section-content h2 {
+.content-section p {
+  max-width: 600px;
   margin: 0;
-  font-size: clamp(45px, 6vw, 90px);
-  line-height: .92;
-  letter-spacing: -.05em;
+  font-size: 20px;
+  line-height: 1.6;
 }
 
-.section-content p {
-  max-width: 550px;
-  margin-top: 30px;
-  font-size: 18px;
-  line-height: 1.7;
+/* ========================================= ANIMATION WRAPPER ========================================= */
+/* The section itself doesn't get transformed. Its inner content gets transformed only during the entrance. */
+.content-section .container {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* ========================================= IMAGE ========================================= */
-.section-image {
-  width: 100%;
-  height: 560px;
-  overflow: hidden;
-  border-radius: 35px;
+/* ========================================= SECTION ENTERING FROM BOTTOM ========================================= */
+.content-section.is-entering .container {
+  opacity: 0;
+  transform: translateY(100vh);
+  transition: transform 1200ms cubic-bezier(.16, 1, .3, 1), opacity 500ms ease;
 }
 
-.section-image img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
+/* ========================================= SECTION HAS ARRIVED ========================================= */
+.content-section.is-visible .container {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ========================================= MOBILE ========================================= */
 @media (max-width: 767px) {
-
-  .page-section,
-  .section-panel {
-    height: 100svh;
-  }
-
-  .section-inner {
+  .container {
     width: calc(100% - 40px);
   }
 
-  .section-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
+  .section {
+    min-height: 100svh;
   }
 
-  .section-image {
-    height: 280px;
-    border-radius: 25px;
+  .content-section h2 {
+    font-size: clamp(48px, 13vw, 75px);
   }
 
-  .section-content h2 {
-    font-size: clamp(40px, 12vw, 65px);
-  }
-
-  .page-section.enter-bottom .section-panel {
-    transform: translate3d(0, 100%, 0);
-  }
-
-  .page-section.enter-top .section-panel {
-    transform: translate3d(0, -100%, 0);
+  .content-section p,
+  .hero p {
+    font-size: 17px;
   }
 }
 
 /* ========================================= REDUCED MOTION ========================================= */
 @media (prefers-reduced-motion: reduce) {
-  .section-panel {
+  .content-section .container {
     transition: none !important;
-    transform: translate3d(0, 0, 0) !important;
+    transform: translateY(0) !important;
+    opacity: 1 !important;
   }
 }
