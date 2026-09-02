@@ -575,3 +575,120 @@
   
   
   })();
+
+
+
+//   js for the slick slider 
+$(document).ready(function () {
+
+    const $slider = $('.media-slider');
+  
+    if (!$slider.length) return;
+  
+  
+    $slider.slick({
+  
+      slidesToShow: 1,
+  
+      slidesToScroll: 1,
+  
+      infinite: true,
+  
+      arrows: true,
+  
+      dots: true,
+  
+      appendDots: $('.media-slider-dots'),
+  
+      prevArrow: $('.media-slider-prev'),
+  
+      nextArrow: $('.media-slider-next'),
+  
+  
+      /*
+       * Smooth movement
+       */
+      speed: 1000,
+  
+      cssEase: 'cubic-bezier(.16, 1, .3, 1)',
+  
+  
+      /*
+       * Prevent multiple slides
+       * from being triggered quickly.
+       */
+      waitForAnimate: true,
+  
+  
+      /*
+       * Swipe / touch
+       */
+      swipe: true,
+  
+      touchMove: true,
+  
+      draggable: true,
+  
+  
+      /*
+       * Adaptive height disabled because
+       * both slides have the same visual structure.
+       */
+      adaptiveHeight: false
+  
+    });
+  
+  
+    /*
+     * PLAY VIDEO ONLY ON ACTIVE SLIDE
+     */
+  
+    const handleVideo = () => {
+  
+      const $videos =
+        $slider.find('video');
+  
+      $videos.each(function () {
+  
+        this.pause();
+  
+      });
+  
+  
+      const activeVideo =
+        $slider
+          .find('.slick-current video')
+          .get(0);
+  
+  
+      if (activeVideo) {
+  
+        activeVideo.currentTime = 0;
+  
+        activeVideo.play().catch(() => {});
+  
+      }
+  
+    };
+  
+  
+    /*
+     * Initial video
+     */
+    handleVideo();
+  
+  
+    /*
+     * After slide changes
+     */
+    $slider.on(
+      'afterChange',
+      function () {
+  
+        handleVideo();
+  
+      }
+    );
+  
+  });
+  

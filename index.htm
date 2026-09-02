@@ -8,6 +8,19 @@
   <title>Section Slide</title>
 
   <link rel="stylesheet" href="./index.css">
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+>
+
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js">
+</script>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js">
+</script>
+
 </head>
 
 <body>
@@ -16,6 +29,23 @@
 
     <!-- SECTION 01 -->
     <section class="slide-section section-01 active">
+
+      <!-- Background Video -->
+      <video
+        class="section-bg-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+      >
+        <source src="./assets/video/vidoe1.mp4" type="video/mp4">
+      </video>
+    
+      <!-- Dark Overlay -->
+      <div class="section-overlay"></div>
+    
+      <!-- Content -->
       <div class="section-content">
         <span>SECTION 01</span>
         <h1>Build the future.</h1>
@@ -23,29 +53,167 @@
           This is the hero section.
         </p>
       </div>
+    
     </section>
 
 
     <!-- SECTION 02 -->
     <section class="slide-section section-02">
       <div class="section-content">
-        <span>SECTION 02</span>
-        <h2>The future starts here.</h2>
+       
+        <h2>The technology making all of it work comes from one place: MediaTek.</h2>
         <p>
-          This entire section slides over Section 01.
+          We power more than two billion devices every year, from the most advanced Al infrastructure on the planet to the everyday devices that make life smarter, faster, and more connected. For everyone.
         </p>
+        <span>MediaTek silicon is the common thread running through all of it.</span>
       </div>
+
+
+
+      <div class="media-slider-section">
+
+        <div class="media-slider">
+      
+          <!-- SLIDE 01 -->
+          <div class="media-slide">
+      
+            <div class="media-slide-content">
+      
+              <h2>
+                Al from your pocket to the data center.
+              </h2>
+      
+              <p>
+                MediaTek is the only silicon platform running Al at every layer of the stack: neural engines in edge devices, compute chips in Al PCs, and rack-level infrastructure in hyperscale data centers. Not one category. <br>The entire chain.
+Edge to cloud? Yeah, MediaTek does that
+              </p>
+      
+              <!-- <a href="#" class="slide-button">
+                Explore more
+              </a> -->
+            </div>
+      
+            <div class="media-slide-visual">
+      
+              <img
+                src="./assets/images/img.jpg"
+                alt="Technology"
+              >
+      
+            </div>
+      
+          </div>
+      
+      
+          <!-- SLIDE 02 -->
+          <div class="media-slide">
+      
+            <div class="media-slide-content">
+      
+              <h2>
+                The most advanced technology, built for everyone.
+              </h2>
+      
+              <p>
+                For thirty years, MediaTek has engineered high-performance silicon across different price points and markets, making the most advanced connectivity, Al, and compute capabilities available to as many people as possible. Technology for everyone isn't a tagline.<br> It's our business model
+Silicon for everyone? Yeah, MediaTek does that.
+              </p>
+      
+              <!-- <a href="#" class="slide-button">
+                Discover more
+              </a> -->
+            </div>
+      
+            <div class="media-slide-visual">
+      
+              <img
+                src="./assets/images/img3.jpg"
+                alt="Innovation"
+              >
+      
+            </div>
+      
+          </div>
+      
+      
+          <!-- SLIDE 03 -->
+          <div class="media-slide">
+      
+            <div class="media-slide-content">
+      
+              <h2>
+                Everything works
+                together.
+              </h2>
+      
+              <p>
+                Experience a connected ecosystem where
+                performance and design come together.
+              </p>
+      
+              <!-- <a href="#" class="slide-button">
+                Learn more
+              </a> -->
+            </div>
+      
+            <div class="media-slide-visual">
+      
+              <video
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              >
+                <source
+                  src="./assets/video/vid2.mp4"
+                  type="video/mp4"
+                >
+              </video>
+      
+            </div>
+      
+          </div>
+      
+        </div>
+      
+        <div class="media-slider-dots"></div>
+        <div class="media-slider-controls">
+      
+          <button
+            class="media-slider-prev"
+            type="button"
+            aria-label="Previous slide"
+          >
+            ←
+          </button>
+      
+          
+      
+          <button
+            class="media-slider-next"
+            type="button"
+            aria-label="Next slide"
+          >
+            →
+          </button>
+      
+        </div>
+      </div>
+      
+    
     </section>
 
 
     <!-- SECTION 03 -->
     <section class="slide-section section-03">
       <div class="section-content">
-        <span>SECTION 03</span>
-        <h2>Designed for what's next.</h2>
+        <span>COMPUTE</span>
+        <h2>The computer brands you trust. <br>Trust us.</h2>
         <p>
-          This entire section slides over Section 02.
+          Al PCs, laptops, supercomputers, all powered by MediaTek silicon.
+
         </p>
+        <span>Yeah, MediaTek does that.</span>
       </div>
     </section>
 
@@ -56,7 +224,10 @@
         <span>SECTION 04</span>
         <h2>Everything works together.</h2>
         <p>
-          This entire section slides over Section 03.
+          The race to build Al infrastructure is also a race against the power grid. That's why MediaTek is rewriting the economics of the data center, designing rack-level solutions and silicon platforms built specifically for Al workloads. <br>
+Our platform delivers the compute density hyperscalers demand without the energy costs that come with it. That's a deliberate design decision. That's performance per watt. <br>
+Every efficiency gain in silicon compounds across thousands of racks. It's the difference between a data center that scales and one that stalls. MediaTek brings the same power-efficiency obsession that drove us to the top of the consumer chip market to the infrastructure challenge of the decade <br>
+MediaTek's end-to-end data center platforms maximize performance per total cost of ownership (TCO) and performance per watt. Built from scratch for the rack, for the workload, and for the infrastructure economics modern Al demands
         </p>
       </div>
     </section>
@@ -65,10 +236,11 @@
     <!-- SECTION 05 -->
     <section class="slide-section section-05">
       <div class="section-content">
-        <span>SECTION 05</span>
-        <h2>What's next?</h2>
+        
+        <h2>Full Stack Solution</h2>
         <p>
-          Final section.
+          Dive deeper into our custom ASIC technology around xPUs, packaging, interconnects, and more. (LINK)
+          <span>Custom ASIC solutions and XPUs</span>
         </p>
       </div>
     </section>
