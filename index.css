@@ -1,150 +1,162 @@
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
 }
 
 body {
+  font-family: Arial, sans-serif;
   overflow-x: hidden;
-  font-family: Arial, Helvetica, sans-serif;
   background: #111;
 }
 
-/* ========================================= COMMON SECTION ========================================= */
-.section {
+.page {
   position: relative;
+}
+
+/* --------------------------------
+   COMMON SECTION
+-------------------------------- */
+
+.stack-section {
+  position: sticky;
+  top: 0;
+
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  height: 100svh;
+
   display: flex;
   align-items: center;
-  overflow: hidden;
+  justify-content: center;
+
+  scroll-snap-align: start;
+
+  isolation: isolate;
 }
 
-/* ========================================= CONTAINER ========================================= */
-.container {
-  width: min(calc(100% - 80px), 1400px);
-  margin: 0 auto;
-}
+/* --------------------------------
+   STACK ORDER
+-------------------------------- */
 
-/* ========================================= HERO ========================================= */
 .hero {
-  position: relative;
   z-index: 1;
+}
+
+.section-one {
+  z-index: 2;
+}
+
+.section-two {
+  z-index: 3;
+}
+
+.section-three {
+  z-index: 4;
+}
+
+/* --------------------------------
+   BACKGROUNDS
+-------------------------------- */
+
+.hero {
   background: #111;
   color: #fff;
 }
 
-.hero h1 {
-  max-width: 1000px;
-  margin: 20px 0 30px;
-  font-size: clamp(60px, 9vw, 140px);
-  line-height: .88;
-  letter-spacing: -.06em;
-}
-
-.hero p {
-  max-width: 500px;
-  margin: 0;
-  font-size: 20px;
-  line-height: 1.6;
-  opacity: .7;
-}
-
-/* ========================================= EYEBROW ========================================= */
-.eyebrow {
-  display: block;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-}
-
-/* ========================================= CONTENT SECTIONS ========================================= */
-.content-section {
-  /* * Important: * * Each section has a full viewport height. */
-  min-height: 100vh;
-  position: relative;
-}
-
-/* ========================================= SECTION 02 ========================================= */
-.section-02 {
-  z-index: 2;
+.section-one {
   background: #fff;
   color: #111;
 }
 
-/* ========================================= SECTION 03 ========================================= */
-.section-03 {
-  z-index: 3;
+.section-two {
+  background: #151515;
+  color: #fff;
+}
+
+.section-three {
   background: #ff9800;
   color: #111;
 }
 
-/* ========================================= SECTION HEADINGS ========================================= */
-.content-section h2 {
-  max-width: 900px;
-  margin: 25px 0 30px;
-  font-size: clamp(55px, 8vw, 120px);
-  line-height: .9;
-  letter-spacing: -.06em;
+/* --------------------------------
+   OVERLAP DEPTH
+-------------------------------- */
+
+.section-one,
+.section-two,
+.section-three {
+  box-shadow: 0 -25px 60px rgba(0, 0, 0, 0.18);
 }
 
-.content-section p {
+/* --------------------------------
+   CONTENT
+-------------------------------- */
+
+.section-content {
+  width: min(900px, 90%);
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(70px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 1s cubic-bezier(.16, 1, .3, 1);
+}
+
+.stack-section.is-active .section-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-content span {
+  display: block;
+  margin-bottom: 20px;
+
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.section-content h1,
+.section-content h2 {
+  margin-bottom: 20px;
+
+  font-size: clamp(45px, 7vw, 100px);
+  line-height: 0.95;
+}
+
+.section-content p {
   max-width: 600px;
-  margin: 0;
-  font-size: 20px;
+  margin: 0 auto;
+
+  font-size: 18px;
   line-height: 1.6;
 }
 
-/* ========================================= ANIMATION WRAPPER ========================================= */
-/* The section itself doesn't get transformed. Its inner content gets transformed only during the entrance. */
-.content-section .container {
-  opacity: 1;
-  transform: translateY(0);
-}
 
-/* ========================================= SECTION ENTERING FROM BOTTOM ========================================= */
-.content-section.is-entering .container {
-  opacity: 0;
-  transform: translateY(100vh);
-  transition: transform 1200ms cubic-bezier(.16, 1, .3, 1), opacity 500ms ease;
-}
+/* --------------------------------
+   REDUCED MOTION
+-------------------------------- */
 
-/* ========================================= SECTION HAS ARRIVED ========================================= */
-.content-section.is-visible .container {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ========================================= MOBILE ========================================= */
-@media (max-width: 767px) {
-  .container {
-    width: calc(100% - 40px);
-  }
-
-  .section {
-    min-height: 100svh;
-  }
-
-  .content-section h2 {
-    font-size: clamp(48px, 13vw, 75px);
-  }
-
-  .content-section p,
-  .hero p {
-    font-size: 17px;
-  }
-}
-
-/* ========================================= REDUCED MOTION ========================================= */
 @media (prefers-reduced-motion: reduce) {
-  .content-section .container {
-    transition: none !important;
-    transform: translateY(0) !important;
-    opacity: 1 !important;
+
+  html {
+    scroll-behavior: auto;
+    scroll-snap-type: none;
   }
+
+  .section-content {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
 }
