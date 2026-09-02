@@ -1,0 +1,214 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: #111;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ========================================= HERO ========================================= */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background: #111;
+  color: #fff;
+  z-index: 1;
+}
+
+.hero-content {
+  width: min(calc(100% - 80px), 1400px);
+  margin: auto;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(50px, 8vw, 120px);
+  line-height: .9;
+  letter-spacing: -.05em;
+}
+
+/* ========================================= SECTION ========================================= */
+.page-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: start;
+  z-index: 1;
+}
+
+/* ========================================= PANEL ========================================= */
+.section-panel {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  transition: transform 1100ms cubic-bezier(.22, 1, .36, 1);
+}
+
+/* ========================================= FIRST SECTION ========================================= */
+.section-one {
+  background: #fff;
+  color: #111;
+}
+
+.section-one .section-panel {
+  transform: none;
+}
+
+/* ========================================= SECTION 02 ========================================= */
+.section-two {
+  background: #191919;
+  color: #fff;
+  z-index: 2;
+}
+
+/* ========================================= SECTION 03 ========================================= */
+.section-three {
+  background: #ff9800;
+  color: #111;
+  z-index: 3;
+}
+
+/* ========================================= SECTION 04 ========================================= */
+.section-four {
+  background: #f4f4f4;
+  color: #111;
+  z-index: 4;
+}
+
+/* ========================================= ENTER FROM BOTTOM ========================================= */
+.page-section.enter-bottom .section-panel {
+  transform: translate3d(0, 100%, 0);
+}
+
+/* ========================================= NORMAL / ARRIVED ========================================= */
+.page-section.enter-bottom .section-panel.is-active {
+  transform: translate3d(0, 0, 0);
+}
+
+/* ========================================= EXIT TOWARD BOTTOM ========================================= */
+.page-section.exit-bottom .section-panel {
+  transform: translate3d(0, 100%, 0);
+}
+
+/* ========================================= ENTER FROM TOP ========================================= */
+.page-section.enter-top .section-panel {
+  transform: translate3d(0, -100%, 0);
+}
+
+/* ========================================= ARRIVE FROM TOP ========================================= */
+.page-section.enter-top .section-panel.is-active {
+  transform: translate3d(0, 0, 0);
+}
+
+/* ========================================= CONTENT ========================================= */
+.section-inner {
+  width: min(calc(100% - 80px), 1400px);
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+
+/* ========================================= GRID ========================================= */
+.section-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* ========================================= TEXT ========================================= */
+.section-content {
+  max-width: 650px;
+}
+
+.section-content h2 {
+  margin: 0;
+  font-size: clamp(45px, 6vw, 90px);
+  line-height: .92;
+  letter-spacing: -.05em;
+}
+
+.section-content p {
+  max-width: 550px;
+  margin-top: 30px;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* ========================================= IMAGE ========================================= */
+.section-image {
+  width: 100%;
+  height: 560px;
+  overflow: hidden;
+  border-radius: 35px;
+}
+
+.section-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* ========================================= MOBILE ========================================= */
+@media (max-width: 767px) {
+
+  .page-section,
+  .section-panel {
+    height: 100svh;
+  }
+
+  .section-inner {
+    width: calc(100% - 40px);
+  }
+
+  .section-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .section-image {
+    height: 280px;
+    border-radius: 25px;
+  }
+
+  .section-content h2 {
+    font-size: clamp(40px, 12vw, 65px);
+  }
+
+  .page-section.enter-bottom .section-panel {
+    transform: translate3d(0, 100%, 0);
+  }
+
+  .page-section.enter-top .section-panel {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+/* ========================================= REDUCED MOTION ========================================= */
+@media (prefers-reduced-motion: reduce) {
+  .section-panel {
+    transition: none !important;
+    transform: translate3d(0, 0, 0) !important;
+  }
+}
