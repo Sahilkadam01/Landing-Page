@@ -1,66 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Section Overlap</title>
+  <title>Section Slide</title>
 
   <link rel="stylesheet" href="./index.css">
 </head>
 
 <body>
 
-<main class="page">
+  <main class="page">
 
-  <!-- HERO -->
-  <section class="stack-section hero">
-    <div class="section-content">
-      <span>HERO</span>
-      <h1>Build the future.</h1>
-      <p>Scroll down to see the sections overlap.</p>
-    </div>
-  </section>
-
-
-  <!-- SECTION 01 -->
-  <section class="stack-section section-one" data-stack-section>
-    <div class="section-content">
-      <span>SECTION 01</span>
-      <h2>The future starts here.</h2>
-      <p>
-        This entire section comes from the bottom and covers the hero.
-      </p>
-    </div>
-  </section>
+    <!-- SECTION 01 -->
+    <section class="slide-section section-01 active">
+      <div class="section-content">
+        <span>SECTION 01</span>
+        <h1>Build the future.</h1>
+        <p>
+          This is the hero section.
+        </p>
+      </div>
+    </section>
 
 
-  <!-- SECTION 02 -->
-  <section class="stack-section section-two" data-stack-section>
-    <div class="section-content">
-      <span>SECTION 02</span>
-      <h2>Designed for what's next.</h2>
-      <p>
-        This section overlaps Section 01.
-      </p>
-    </div>
-  </section>
+    <!-- SECTION 02 -->
+    <section class="slide-section section-02">
+      <div class="section-content">
+        <span>SECTION 02</span>
+        <h2>The future starts here.</h2>
+        <p>
+          This entire section slides over Section 01.
+        </p>
+      </div>
+    </section>
 
 
-  <!-- SECTION 03 -->
-  <section class="stack-section section-three" data-stack-section>
-    <div class="section-content">
-      <span>SECTION 03</span>
-      <h2>Everything works together.</h2>
-      <p>
-        This section overlaps Section 02.
-      </p>
-    </div>
-  </section>
+    <!-- SECTION 03 -->
+    <section class="slide-section section-03">
+      <div class="section-content">
+        <span>SECTION 03</span>
+        <h2>Designed for what's next.</h2>
+        <p>
+          This entire section slides over Section 02.
+        </p>
+      </div>
+    </section>
 
-</main>
 
-<script src="./script.js"></script>
+    <!-- SECTION 04 -->
+    <section class="slide-section section-04">
+      <div class="section-content">
+        <span>SECTION 04</span>
+        <h2>Everything works together.</h2>
+        <p>
+          This entire section slides over Section 03.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- SECTION 05 -->
+    <section class="slide-section section-05">
+      <div class="section-content">
+        <span>SECTION 05</span>
+        <h2>What's next?</h2>
+        <p>
+          Final section.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+
+  <script src="./script.js"></script>
 
 </body>
 </html>

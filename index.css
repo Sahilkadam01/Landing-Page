@@ -4,28 +4,46 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
+
+/* =====================================
+   PAGE
+===================================== */
+
+html,
+body {
+  width: 100%;
+  height: 100%;
 }
 
 body {
+  overflow: hidden;
   font-family: Arial, sans-serif;
-  overflow-x: hidden;
-  background: #111;
 }
+
+
+/* =====================================
+   MAIN PAGE
+===================================== */
 
 .page {
   position: relative;
+
+  width: 100%;
+  height: 100vh;
+
+  overflow: hidden;
 }
 
-/* --------------------------------
-   COMMON SECTION
--------------------------------- */
 
-.stack-section {
-  position: sticky;
-  top: 0;
+/* =====================================
+   ALL SECTIONS
+===================================== */
+
+.slide-section {
+
+  position: absolute;
+
+  inset: 0;
 
   width: 100%;
   height: 100vh;
@@ -35,127 +53,207 @@ body {
   align-items: center;
   justify-content: center;
 
-  scroll-snap-align: start;
+  overflow: hidden;
 
-  isolation: isolate;
+  /*
+   * Every section starts below
+   * the previous section.
+   */
+  transform: translateY(100%);
+
+  /*
+   * Smooth full-section movement.
+   */
+  transition:
+    transform 1.35s cubic-bezier(.16, 1, .3, 1);
+
+  /*
+   * GPU rendering.
+   */
+  will-change: transform;
 }
 
-/* --------------------------------
-   STACK ORDER
--------------------------------- */
 
-.hero {
+/* =====================================
+   ACTIVE SECTION
+===================================== */
+
+.slide-section.active {
+  transform: translateY(0);
+}
+
+
+/* =====================================
+   SECTION ORDER
+===================================== */
+
+.section-01 {
   z-index: 1;
 }
 
-.section-one {
+.section-02 {
   z-index: 2;
 }
 
-.section-two {
+.section-03 {
   z-index: 3;
 }
 
-.section-three {
+.section-04 {
   z-index: 4;
 }
 
-/* --------------------------------
-   BACKGROUNDS
--------------------------------- */
+.section-05 {
+  z-index: 5;
+}
 
-.hero {
+
+/* =====================================
+   BACKGROUNDS
+===================================== */
+
+.section-01 {
   background: #111;
   color: #fff;
 }
 
-.section-one {
+.section-02 {
   background: #fff;
   color: #111;
 }
 
-.section-two {
-  background: #151515;
+.section-03 {
+  background: #181818;
   color: #fff;
 }
 
-.section-three {
+.section-04 {
   background: #ff9800;
   color: #111;
 }
 
-/* --------------------------------
-   OVERLAP DEPTH
--------------------------------- */
-
-.section-one,
-.section-two,
-.section-three {
-  box-shadow: 0 -25px 60px rgba(0, 0, 0, 0.18);
+.section-05 {
+  background: #e8e8e8;
+  color: #111;
 }
 
-/* --------------------------------
+
+/* =====================================
    CONTENT
--------------------------------- */
+===================================== */
 
 .section-content {
+
   width: min(900px, 90%);
+
   text-align: center;
 
   opacity: 0;
-  transform: translateY(70px);
+
+  transform: translateY(60px);
 
   transition:
-    opacity 0.8s ease,
-    transform 1s cubic-bezier(.16, 1, .3, 1);
+    opacity 0.8s ease 0.35s,
+    transform 1s cubic-bezier(.16, 1, .3, 1) 0.25s;
 }
 
-.stack-section.is-active .section-content {
+
+/* =====================================
+   CONTENT ACTIVE
+===================================== */
+
+.slide-section.active .section-content {
+
   opacity: 1;
+
   transform: translateY(0);
 }
 
+
+/* =====================================
+   HERO CONTENT
+===================================== */
+
+.section-01 .section-content {
+
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =====================================
+   TEXT
+===================================== */
+
 .section-content span {
+
   display: block;
+
   margin-bottom: 20px;
 
   font-size: 14px;
+
   font-weight: 700;
+
   letter-spacing: 3px;
+
   text-transform: uppercase;
 }
 
+
 .section-content h1,
 .section-content h2 {
+
   margin-bottom: 20px;
 
   font-size: clamp(45px, 7vw, 100px);
+
   line-height: 0.95;
 }
 
+
 .section-content p {
+
   max-width: 600px;
+
   margin: 0 auto;
 
   font-size: 18px;
+
   line-height: 1.6;
 }
 
 
-/* --------------------------------
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 767px) {
+
+  .section-content h1,
+  .section-content h2 {
+    font-size: clamp(42px, 12vw, 70px);
+  }
+
+  .section-content p {
+    font-size: 16px;
+  }
+
+}
+
+
+/* =====================================
    REDUCED MOTION
--------------------------------- */
+===================================== */
 
 @media (prefers-reduced-motion: reduce) {
 
-  html {
-    scroll-behavior: auto;
-    scroll-snap-type: none;
+  .slide-section {
+    transition: none;
   }
 
   .section-content {
-    opacity: 1;
-    transform: none;
     transition: none;
   }
 
