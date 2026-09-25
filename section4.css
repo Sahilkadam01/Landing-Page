@@ -1,0 +1,416 @@
+.section-04 {
+  background: #ff9800;
+  color: #111;
+  padding: 50px 7%;
+  overflow: hidden;
+}
+
+.section-04-inner {
+  width: 100%;
+  max-width: 1250px;
+  height: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+
+
+.section-04-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 20px;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.section-04-label span {
+  width: 35px;
+  height: 2px;
+  display: block;
+
+  margin: 0;
+
+  background: #111;
+}
+
+
+
+
+.section-04-heading {
+  display: grid;
+  grid-template-columns: 1fr 0.75fr;
+  gap: 50px;
+
+  align-items: end;
+
+  margin-bottom: 35px;
+}
+
+.section-04-heading h2 {
+  margin: 0;
+
+  font-size: clamp(48px, 6vw, 82px);
+  line-height: 0.95;
+  letter-spacing: -3px;
+}
+
+.section-04-heading h2 strong {
+  display: block;
+  color: #fff;
+}
+
+.section-04-heading p {
+  max-width: 480px;
+
+  margin: 0;
+
+  font-size: 16px;
+  line-height: 1.65;
+  text-align: left;
+}
+
+
+.section-04-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+
+  width: 100%;
+}
+
+.section-04-card {
+  min-height: 190px;
+
+  padding: 22px;
+
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.16);
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.section-04-card:hover {
+  transform: translateY(-6px);
+
+  background: rgba(255, 255, 255, 0.28);
+
+  border-color: rgba(0, 0, 0, 0.45);
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 30px;
+}
+
+.card-top span {
+  margin: 0;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.card-top i {
+  font-size: 20px;
+  font-style: normal;
+
+  transition: transform 0.3s ease;
+}
+
+.section-04-card:hover .card-top i {
+  transform: translate(3px, -3px);
+}
+
+.section-04-card h3 {
+  margin: 0 0 10px;
+
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.section-04-card p {
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.55;
+  text-align: left;
+}
+
+
+
+
+.section-04-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-top: 28px;
+  padding-top: 22px;
+
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.section-04-bottom>div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.section-04-bottom>div:first-child>span {
+  margin: 0;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.section-04-bottom p {
+  margin: 0;
+
+  font-size: 13px;
+  text-align: left;
+}
+
+.section-04-flow {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  white-space: nowrap;
+}
+
+.section-04-flow b {
+  font-size: 12px;
+}
+
+.section-04-flow span {
+  margin: 0;
+
+  color: #fff;
+
+  font-size: 20px;
+}
+
+
+
+
+@media (max-width: 1199px) {
+
+  .section-04 {
+    padding: 40px 5%;
+  }
+
+  .section-04-heading {
+    gap: 30px;
+    margin-bottom: 25px;
+  }
+
+  .section-04-heading h2 {
+    font-size: clamp(44px, 6vw, 68px);
+  }
+
+  .section-04-heading p {
+    font-size: 14px;
+  }
+
+  .section-04-card {
+    min-height: 170px;
+    padding: 18px;
+  }
+
+  .card-top {
+    margin-bottom: 20px;
+  }
+
+  .section-04-card h3 {
+    font-size: 18px;
+  }
+}
+
+
+
+@media (max-width: 1023px) {
+
+  .section-04 {
+    padding: 35px 5%;
+  }
+
+  .section-04-heading {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+
+  .section-04-heading h2 {
+    font-size: clamp(42px, 7vw, 60px);
+  }
+
+  .section-04-heading p {
+    max-width: 650px;
+  }
+
+  .section-04-cards {
+    gap: 10px;
+  }
+
+  .section-04-card {
+    min-height: 155px;
+    padding: 16px;
+  }
+
+  .card-top {
+    margin-bottom: 18px;
+  }
+
+  .section-04-card h3 {
+    font-size: 16px;
+  }
+
+  .section-04-card p {
+    font-size: 12px;
+  }
+
+  .section-04-bottom {
+    margin-top: 20px;
+    padding-top: 16px;
+  }
+}
+
+
+
+
+@media (max-width: 767px) {
+
+  .section-04 {
+    padding: 30px 20px;
+  }
+
+  .section-04-inner {
+    justify-content: center;
+  }
+
+  .section-04-label {
+    margin-bottom: 14px;
+
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .section-04-label span {
+    width: 25px;
+  }
+
+  .section-04-heading {
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .section-04-heading h2 {
+    font-size: clamp(36px, 10vw, 48px);
+    line-height: 0.98;
+    letter-spacing: -1.5px;
+  }
+
+  .section-04-heading p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .section-04-cards {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .section-04-card {
+    min-height: auto;
+    padding: 14px 16px;
+
+    display: grid;
+    grid-template-columns: 35px 1fr;
+    column-gap: 10px;
+  }
+
+  .card-top {
+    grid-row: span 2;
+
+    align-items: flex-start;
+
+    margin: 0;
+  }
+
+  .card-top i {
+    display: none;
+  }
+
+  .section-04-card h3 {
+    margin-bottom: 4px;
+
+    font-size: 15px;
+  }
+
+  .section-04-card p {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  .section-04-bottom {
+    display: none;
+  }
+}
+
+
+
+@media (max-width: 480px) {
+
+  .section-04 {
+    padding: 25px 15px;
+  }
+
+  .section-04-heading h2 {
+    font-size: 34px;
+  }
+
+  .section-04-heading p {
+    font-size: 12px;
+  }
+
+  .section-04-card {
+    padding: 11px 12px;
+  }
+
+  .section-04-card h3 {
+    font-size: 13px;
+  }
+
+  .section-04-card p {
+    font-size: 10px;
+  }
+}
+
+
+
+@media (prefers-reduced-motion: reduce) {
+
+  .section-04-card,
+  .card-top i {
+    transition: none;
+  }
+}

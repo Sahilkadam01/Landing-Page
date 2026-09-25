@@ -1,0 +1,438 @@
+/* new second section css start from here ----------------------------------------------------------------------*/
+
+@media (min-width: 1200px) {
+
+  .section-02 {
+    padding: 60px 0;
+  }
+
+  .section-02 .section-content {
+    width: 82%;
+    padding: 0 40px;
+  }
+
+  .section-02 .section-content h2 {
+    max-width: 1000px;
+    margin: 0 auto 18px;
+    font-size: clamp(38px, 3.2vw, 52px);
+    line-height: 1.08;
+  }
+
+  .section-02 .section-content p {
+    max-width: 900px;
+    margin-bottom: 20px;
+    font-size: 17px;
+    line-height: 1.55;
+  }
+
+  .section-02 .section-content>span {
+    margin-bottom: 30px;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    color: #ff9800;
+  }
+
+  .section-02 .media-slider-section {
+    width: 82%;
+    max-width: 1400px;
+    padding: 30px;
+    border-radius: 22px;
+  }
+
+  .section-02 .media-slide.slick-slide {
+    height: 330px;
+    padding: 30px;
+  }
+
+  .section-02 .media-slide-content {
+    padding-right: 5%;
+  }
+
+  .section-02 .media-slide-content h2 {
+    font-size: clamp(27px, 2.1vw, 36px);
+    line-height: 1.12;
+    margin-bottom: 18px;
+  }
+
+  .section-02 .media-slide-content p {
+    font-size: 15px;
+    line-height: 1.55;
+    margin-bottom: 20px;
+  }
+
+  .section-02 .media-slide-visual {
+    border-radius: 18px;
+  }
+
+}
+
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+
+  .section-02 {
+    padding: 45px 0;
+  }
+
+  .section-02 .section-content {
+    width: 88%;
+    padding: 0 30px;
+  }
+
+  .section-02 .section-content h2 {
+    max-width: 900px;
+    margin: 0 auto 15px;
+    font-size: 38px;
+    line-height: 1.1;
+  }
+
+  .section-02 .section-content p {
+    max-width: 800px;
+    margin-bottom: 18px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .section-02 .section-content>span {
+    margin-bottom: 25px;
+    font-size: 12px;
+    letter-spacing: 1.3px;
+    color: #ff9800;
+  }
+
+  .section-02 .media-slider-section {
+    width: 88%;
+    padding: 25px;
+    border-radius: 20px;
+  }
+
+  .section-02 .media-slide.slick-slide {
+    height: 310px;
+    padding: 25px;
+  }
+
+  .section-02 .media-slide-content h2 {
+    font-size: 27px;
+    line-height: 1.15;
+    margin-bottom: 15px;
+  }
+
+  .section-02 .media-slide-content p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .section-02 .media-slide-visual {
+    border-radius: 17px;
+  }
+
+}
+
+
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .section-02 {
+    padding: 35px 0;
+  }
+
+  .section-02 .section-content {
+    width: 92%;
+    padding: 0 20px;
+  }
+
+  .section-02 .section-content h2 {
+    max-width: 850px;
+    margin: 0 auto 14px;
+    font-size: clamp(30px, 4vw, 38px);
+    line-height: 1.1;
+  }
+
+  .section-02 .section-content p {
+    max-width: 720px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .section-02 .section-content>span {
+    margin-bottom: 20px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #ff9800;
+  }
+
+
+
+  .section-02 .media-slider-section {
+    width: 92%;
+    padding: 20px;
+    border-radius: 18px;
+  }
+
+  .section-02 .media-slide.slick-slide {
+    height: 280px;
+    padding: 20px;
+  }
+
+  .section-02 .media-slide-content {
+    width: 50%;
+    padding-right: 20px;
+  }
+
+  .section-02 .media-slide-content h2 {
+    font-size: 24px;
+    line-height: 1.15;
+    margin-bottom: 13px;
+  }
+
+  .section-02 .media-slide-content p {
+    font-size: 13px;
+    line-height: 1.45;
+    margin-bottom: 10px;
+  }
+
+  .section-02 .media-slide-visual {
+    width: 50%;
+    border-radius: 15px;
+  }
+
+  .section-02 .media-slider-dots {
+    margin-top: 14px;
+  }
+
+  .section-02 .media-slider-controls button {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+
+  .section-02 .media-slider-prev {
+    left: -20px;
+  }
+
+}
+
+
+
+
+@media (max-width: 767px) {
+
+  .section-02 {
+    padding: 30px 20px;
+    justify-content: center;
+  }
+
+
+
+
+  .section-02 .section-content {
+    width: 100%;
+    padding: 0;
+  }
+
+  .section-02 .section-content h2 {
+    max-width: 600px;
+    margin: 0 auto 12px;
+    font-size: clamp(25px, 7vw, 32px);
+    line-height: 1.12;
+  }
+
+  .section-02 .section-content p {
+    max-width: 620px;
+    margin: 0 auto 12px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .section-02 .section-content>span {
+    margin-bottom: 18px;
+    font-size: 10px;
+    line-height: 1.4;
+    letter-spacing: .8px;
+    color: #ff9800;
+  }
+
+
+
+  .section-02 .media-slider-section {
+    width: 100%;
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+
+
+  .section-02 .media-slider {
+    border-radius: 20px;
+  }
+
+
+
+  .section-02 .media-slide.slick-slide {
+    display: block !important;
+
+    width: 100%;
+
+    height: auto;
+
+    min-height: 0;
+
+    padding: 20px;
+  }
+
+
+
+  .section-02 .media-slide-content {
+    width: 100%;
+
+    padding: 0;
+
+    margin-bottom: 18px;
+  }
+
+  .section-02 .media-slide-content h2 {
+    font-size: 23px;
+    line-height: 1.15;
+
+    margin-bottom: 12px;
+  }
+
+  .section-02 .media-slide-content p {
+    max-width: none;
+
+    margin-bottom: 0;
+
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+
+
+
+  .section-02 .media-slide-visual {
+    width: 100%;
+
+    height: 180px;
+
+    border-radius: 14px;
+  }
+
+  .section-02 .media-slide-visual img,
+  .section-02 .media-slide-visual video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+
+
+  .section-02 .media-slider-dots {
+    margin-top: 12px;
+  }
+
+  .section-02 .media-slider-dots li {
+    max-width: 31%;
+  }
+
+  .section-02 .media-slider-dots button {
+    height: 5px;
+  }
+
+
+
+
+  .section-02 .media-slider-controls {
+    position: absolute;
+
+    top: 50%;
+
+    left: 0;
+
+    width: 100%;
+
+    pointer-events: none;
+  }
+
+  .section-02 .media-slider-prev,
+  .section-02 .media-slider-next {
+
+    width: 32px;
+    height: 32px;
+
+    font-size: 15px;
+
+    background: rgba(0, 0, 0, .65);
+
+    color: #fff;
+
+    border-color: rgba(255, 255, 255, .35);
+
+    pointer-events: auto;
+  }
+
+  .section-02 .media-slider-prev {
+    left: 5px;
+  }
+
+  .section-02 .media-slider-next {
+    right: 5px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .section-02 {
+    padding: 22px 15px;
+  }
+
+  .section-02 .section-content h2 {
+    font-size: 23px;
+    line-height: 1.12;
+  }
+
+  .section-02 .section-content p {
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  .section-02 .section-content>span {
+    font-size: 9px;
+    margin-bottom: 12px;
+  }
+
+  .section-02 .media-slider-section {
+    padding: 12px;
+    border-radius: 14px;
+  }
+
+  .section-02 .media-slide.slick-slide {
+    padding: 15px;
+  }
+
+  .section-02 .media-slide-content h2 {
+    font-size: 20px;
+  }
+
+  .section-02 .media-slide-content p {
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  .section-02 .media-slide-visual {
+    height: 145px;
+  }
+
+  .section-02 .media-slider-prev,
+  .section-02 .media-slider-next {
+    width: 28px;
+    height: 28px;
+    font-size: 13px;
+  }
+
+}
+
+
+
+/* end here  */
