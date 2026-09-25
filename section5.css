@@ -2,6 +2,12 @@ a.full-stack-cta span {
   margin: 0;
 }
 
+.section-content span.full-stack-line
+{
+  margin: 0;
+}
+
+
 
 .section-05 {
   isolation: isolate;
@@ -441,6 +447,10 @@ a.full-stack-cta span {
 
 @media (max-width: 767px) {
 
+  .section-05 span.full-stack-line {
+    margin-bottom: 0;
+}
+
   .section-05 {
     padding: 45px 0;
   }
@@ -450,7 +460,7 @@ a.full-stack-cta span {
   }
 
   .full-stack-eyebrow {
-    margin-bottom: 18px;
+    margin-bottom: 30px;
     font-size: 10px;
     letter-spacing: 2px;
   }
@@ -566,10 +576,7 @@ a.full-stack-cta span {
     width: calc(100% - 30px);
   }
 
-  .full-stack-eyebrow {
-    margin-bottom: 14px;
-  }
-
+ 
   .section-05 .section-content h2 {
     font-size: clamp(34px, 10vw, 44px);
   }

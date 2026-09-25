@@ -176,7 +176,7 @@ body {
 ===================================== */
 
 .slide-section.active .section-content {
-
+  
   opacity: 1;
 
   transform: translateY(0);
